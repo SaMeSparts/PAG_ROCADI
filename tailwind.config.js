@@ -13,9 +13,11 @@ export default {
         sans: ['Roboto', 'sans-serif'],
       },
       colors: {
-        dorado_oscuro: "#E8860B",
-        dorado_suave:"#E6C200",
-        dorado_metalico:"#DAA520",
+        primary: "#0898A2",    // El turquesa del logo
+        secondary: "#111111",  // Negro para el Navbar
+        accent: "#FBBF24",     // El amarillo del logo para detalles
+        bg: "#FFFFFF",         // Fondo blanco limpio
+        bgSoft: "#F9FAFB",     // Gris casi blanco para secciones
       },
     },
   },

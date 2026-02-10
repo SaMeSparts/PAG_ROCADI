@@ -1,390 +1,225 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>ROCADI | Diseño, Construcción y Mantenimiento</title>
+  <meta name="description" content="Más de 25 años ofreciendo mantenimiento integral, construcción e instalaciones industriales con presupuestos sin compromiso." />
+  </head>
 
-  <title>AnkarDGex | Desarrollo de Páginas Web y Software</title>
-  <meta name="description" content="Agencia de desarrollo web y soluciones digitales. Creamos sitios modernos, rápidos y seguros con tecnología de vanguardia. ¡Cotiza tu proyecto hoy!">
-  <meta name="keywords" content="Desarrollo Web, Diseño Web, Tailwind CSS, Vite, Programación, AnkarDGex, Software">
-  <meta name="author" content="SaMeSparts">
+<body class="font-sans antialiased text-gray-800 bg-white">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.ankardgex.online/" />
-  <meta property="og:title" content="AnkarDGex | Tu negocio en internet" />
-  <meta property="og:description" content="Diseño web profesional, rápido y seguro. Impulsa tu presencia digital con AnkarDGex." />
-  <meta property="og:image" content="https://www.ankardgex.online/og-image.jpg" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.ankardgex.online/" />
-  <meta name="twitter:title" content="AnkarDGex | Desarrollo Web" />
-  <meta name="twitter:description" content="Diseño web profesional y a medida. Entra y conoce nuestros proyectos." />
-  <meta name="twitter:image" content="https://www.ankardgex.online/og-image.jpg" />
-</head>
-
-  <body class="w-full min-h-screen font-sans bg-center bg-no-repeat bg-cover bg-gradient-to-br from-black to-gray-800">
-    
-    <nav class="fixed z-50 w-8/12 h-16 px-2 -translate-x-1/2 bg-gray-900 border border-gray-700 rounded-full shadow-xl top-4 left-1/2 md:max-w-fit bg-opacity-70 backdrop-blur-sm">
-      <div class="container flex items-center justify-between h-full px-4 mx-auto max-w-7xl">
+  <nav class="sticky top-0 z-50 text-white shadow-md bg-[#111111]">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
         
-
-        <a href="#inicio" class="flex-shrink-0">
-          <span class="text-2xl font-bold text-transparent md:mr-2 font-display bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
-            AnkarDGex
-          </span>
-        </a>
-
-        <div class="items-center hidden space-x-6 md:flex">
-          <a href="#servicios" class="block py-2 text-lg font-semibold text-gray-200 transition duration-150 font-display hover:text-white">Servicios</a>
-          <a href="#portafolio" class="block py-2 text-lg font-semibold text-gray-200 transition duration-150 font-display hover:text-white">Portafolio</a>
-          <a href="#sobre-mi" class="block py-2 text-lg font-semibold text-gray-200 transition duration-150 font-display hover:text-white">Sobre mí</a>
-          <a href="#contacto" class="px-4 py-1 text-sm font-medium text-white transition duration-150 rounded-full bg-dorado_oscuro hover:bg-orange-500 font-display">Contacto</a> 
+        <div id="logo-btn" class="flex items-center gap-3 cursor-pointer">
+          <img src="./logoROCADI.jpeg" alt="Logo Rocadi" class="w-auto h-12">
+          <div class="hidden leading-none sm:block font-display">
+            <span class="text-xl font-bold tracking-tight">ROCADI</span>
+            <p class="text-[9px] text-[#0898A2] font-bold tracking-[0.2em]">MANTENIMIENTO</p>
+          </div>
         </div>
 
-        <button id="open-sidebar-btn" class="text-gray-200 size-8 md:hidden">
-          <svg class="w-full h-full" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
+        <div class="items-center hidden h-full space-x-8 md:flex">
+          
+          <div class="relative flex items-center h-full group">
+            <button class="text-sm font-medium transition hover:text-[#0898A2] flex items-center gap-1 focus:outline-none">
+              Inicio
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            
+            <div class="absolute left-0 top-16 w-48 bg-white text-gray-800 shadow-xl rounded-b-lg overflow-hidden hidden group-hover:block border-t-4 border-[#0898A2]">
+              <button id="drop-hero" class="block w-full text-left px-4 py-3 text-sm hover:bg-gray-50 hover:text-[#0898A2] transition border-b border-gray-100">
+                Inicio
+              </button>
+              <button id="drop-mantenimiento" class="block w-full text-left px-4 py-3 text-sm hover:bg-gray-50 hover:text-[#0898A2] transition border-b border-gray-100">
+                Enfoque
+              </button>
+              <button id="drop-nosotros" class="block w-full text-left px-4 py-3 text-sm hover:bg-gray-50 hover:text-[#0898A2] transition">
+                Nosotros
+              </button>
+            </div>
+          </div>
 
-      </div>
-    </nav>
+          <button id="desktop-btn-servicios" class="text-sm font-medium transition hover:text-[#0898A2]">Servicios</button>
+          
+          <a href="tel:5522911614" class="px-5 py-2 text-sm font-bold text-white transition rounded bg-[#0898A2] hover:opacity-90 shadow-lg shadow-[#0898A2]/20">
+            55 2291-1614
+          </a>
+        </div>
 
-    <div id="mobile-sidebar" class="fixed top-0 right-0 z-50 w-64 h-screen transition-transform duration-300 ease-in-out translate-x-full bg-gray-900 shadow-xl">
-      <div class="flex flex-col p-6 space-y-4">
-        <div>
-          <button id="close-sidebar-btn" class="size-6">
-            <svg class="text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        <div class="md:hidden">
+          <button id="open-sidebar-btn" class="p-2 focus:outline-none text-[#0898A2]">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
         </div>
-
-        <a href="#servicios" class="block py-2 text-lg font-semibold text-gray-300 transition duration-150 font-display hover:text-white">Servicios</a>
-        <a href="#portafolio" class="block py-2 text-lg font-semibold text-gray-300 transition duration-150 font-display hover:text-white">Portafolio</a>
-        <a href="#sobre-mi" class="block py-2 text-lg font-semibold text-gray-300 transition duration-150 font-display hover:text-white">Sobre mí</a>
-        <a href="#contacto" class="block py-2 text-lg font-semibold transition duration-150 text-dorado_oscuro hover:text-orange-400 font-display">Contacto</a>
       </div>
     </div>
+  </nav>
 
-    <section id="inicio" class="relative w-full h-screen scroll-mt-24">
-      <div class="flex flex-col items-center justify-center w-full h-full px-4 text-center text-white">
-
-        <img class="w-auto mb-2 size-80" src="./AnkarDGex.svg" alt="Logo AnkarDGex" />
+  <div id="mobile-sidebar" class="fixed inset-0 z-[60] flex translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="w-full p-8 text-white shadow-2xl bg-[#111111]">
+      <div class="flex justify-end">
+        <button id="close-sidebar-btn" class="text-4xl">&times;</button>
+      </div>
+      <div class="flex flex-col mt-12 space-y-8 text-2xl text-center font-display">
+        <button id="mobile-btn-inicio" class="hover:text-[#0898A2]">Inicio</button>
+        <button id="mobile-btn-mantenimiento" class="hover:text-[#0898A2] text-xl text-gray-400">Enfoque</button>
+        <button id="mobile-btn-nosotros" class="hover:text-[#0898A2] text-xl text-gray-400">Nosotros</button>
         
-        <h1 class="text-5xl font-extrabold text-white md:text-7xl font-display">
-          Desarrollo Web que <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">Impulsa</span> tu Negocio
-        </h1>
-
-        <p class="max-w-2xl mt-6 text-lg text-gray-300 md:text-xl">
-          Soluciones web modernas, rápidas y a la medida que convierten visitantes en clientes.
-        </p>
+        <div class="w-full h-px my-4 bg-white/10"></div>
         
-        <div class="mt-10">
-          <a href="#contacto" class="px-8 py-3 text-lg font-semibold text-white transition duration-150 rounded-full bg-dorado_oscuro hover:bg-orange-500 font-display">
-            Inicia tu Proyecto
-          </a>
+        <button id="mobile-btn-servicios" class="hover:text-[#0898A2]">Servicios</button>
+        
+        <div class="pt-8 mt-4 text-center border-t border-white/10">
+          <p class="mb-4 text-sm text-gray-400">Atención inmediata:</p>
+          <a href="tel:5522911614" class="font-bold text-[#0898A2]">55 2291-1614</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="view-inicio" class="block">
+    
+    <header id="hero-section" class="relative py-24 overflow-hidden bg-white border-b border-gray-100 scroll-mt-32 md:py-32">
+      <div class="absolute rounded-full -top-24 -right-24 w-96 h-96 bg-[#0898A2]/5 blur-3xl"></div>
+      <div class="relative px-4 mx-auto max-w-7xl">
+        <div class="max-w-4xl">
+          <span class="inline-block px-4 py-1 mb-6 text-sm font-bold tracking-widest text-[#0898A2] uppercase rounded-full bg-[#0898A2]/10">
+            Empresa Independiente de Mantenimiento
+          </span>
+          <h1 class="mb-8 text-5xl font-extrabold leading-tight text-gray-900 font-display md:text-7xl">
+            Diseño, Construcción y <span class="text-[#0898A2] underline decoration-[#FBBF24]/40">Mantenimiento</span>
+          </h1>
+          <p class="pl-6 text-lg leading-relaxed text-gray-600 border-l-4 md:text-xl border-[#0898A2]">
+            Más de 25 años brindando soluciones confiables en mantenimiento integral a inmuebles e instalaciones industriales. Presupuestos sin compromiso.
+          </p>
+          <div class="flex flex-col gap-4 mt-12 sm:flex-row">
+            <a href="https://wa.me/525522911614" target="_blank" class="px-10 py-4 text-center font-bold text-white transition rounded-lg bg-[#0898A2] shadow-lg hover:-translate-y-1">
+              Solicitar Cotización
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="mantenimiento-section" class="py-20 bg-white scroll-mt-32">
+      <div class="px-4 mx-auto text-center max-w-7xl">
+        <h2 class="mb-6 text-3xl font-extrabold text-gray-900 uppercase font-display md:text-5xl">
+          ROCADI ARQUITECTURA E <span class="text-[#0898A2]">INSTALACIONES</span> S. A. DE C.V.
+        </h2>
+        <div class="w-24 h-1 bg-[#FBBF24] mx-auto mb-16 rounded-full"></div>
+        
+        <div class="grid gap-12 md:grid-cols-3">
+          <div class="flex flex-col items-center group">
+            <div class="w-32 h-32 mb-8 rounded-full bg-[#0898A2] flex items-center justify-center text-white shadow-lg shadow-[#0898A2]/20 transition-transform group-hover:scale-110">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            </div>
+            <h3 class="mb-4 text-2xl font-bold uppercase font-display">Predictivo</h3>
+            <p class="text-sm leading-relaxed text-gray-600">Consiste en la medición y seguimiento de algún parámetro síntoma que se caracteriza por la disminución del desempeño en los equipos.</p>
+          </div>
+          <div class="flex flex-col items-center group">
+            <div class="w-32 h-32 mb-8 rounded-full bg-[#0898A2] flex items-center justify-center text-white shadow-lg shadow-[#0898A2]/20 transition-transform group-hover:scale-110">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
+            </div>
+            <h3 class="mb-4 text-2xl font-bold uppercase font-display">Preventivo</h3>
+            <p class="text-sm leading-relaxed text-gray-600">Consiste en el monitoreo, registro y análisis de la operación de los equipos e instalaciones para evitar o mitigar fallos.</p>
+          </div>
+          <div class="flex flex-col items-center group">
+            <div class="w-32 h-32 mb-8 rounded-full bg-[#0898A2] flex items-center justify-center text-white shadow-lg shadow-[#0898A2]/20 transition-transform group-hover:scale-110">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="mb-4 text-2xl font-bold uppercase font-display">Correctivo</h3>
+            <p class="text-sm leading-relaxed text-gray-600">Consiste en reparar la falla o avería que se presentó en el equipo, evitando costos adicionales por reparaciones mayores.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
-      
-      <div class="container px-6 mx-auto max-w-7xl">
+    <section id="nosotros-section" class="min-h-screen pt-40 pb-24 bg-white scroll-mt-0">
+      <div class="flex flex-col justify-center h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         
-        <div id="servicios" class="mb-16 text-center scroll-mt-24">
-          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
-            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
-              Nuestros Servicios
-            </span>
-          </h2>
-          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
-            Lo que hacemos para potenciar tu presencia digital.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-          <div class="p-8 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
-            <svg class="w-12 h-12 mb-6 text-dorado_metalico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25Z" />
-            </svg>
-            <h3 class="mb-4 text-2xl font-bold text-white font-display">Diseño Web a Medida</h3>
-            <p class="text-gray-300">Páginas web únicas, responsivas y optimizadas que reflejan la identidad de tu marca y atraen a tus clientes.</p>
-          </div>
-
-          <div class="p-8 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
-            <svg class="w-12 h-12 mb-6 text-dorado_metalico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-            </svg>
-            <h3 class="mb-4 text-2xl font-bold text-white font-display">Tiendas en Línea</h3>
-            <p class="text-gray-300">Construimos plataformas de E-Commerce seguras, rápidas y fáciles de administrar para que puedas vender 24/7.</p>
-          </div>
-
-          <div class="p-8 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105">
-            <svg class="w-12 h-12 mb-6 text-dorado_metalico" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
-            </svg>
-            <h3 class="mb-4 text-2xl font-bold text-white font-display">SEO y Mantenimiento</h3>
-            <p class="text-gray-300">Optimizamos tu sitio para los motores de búsqueda y ofrecemos planes de mantenimiento para que tu web esté siempre segura.</p>
-          </div>
-
-        </div>
-       </div>
-    </section>
-
-    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
-      
-      <div class="container px-6 mx-auto max-w-7xl">
-        
-        <div id="portafolio" class="mb-16 text-center scroll-mt-24">
-          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
-            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
-              Proyectos Destacados
-            </span>
-          </h2>
-          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
-            Una muestra de nuestro trabajo más reciente.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-          <a 
-            href="https://samesparts.github.io/PagDG/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="block overflow-hidden transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105"
-          >
-            <img class="object-contain w-full h-48 bg-gray-100" src="./logo_Efi.jpg" alt="Logo EFI-VOLT" />
-            
-            <div class="p-6">
-              <h3 class="mb-3 text-2xl font-bold text-white font-display">EFI-VOLT</h3>
-              <p class="mb-4 text-gray-300">Plataforma de monitoreo de energía en tiempo real con hardware ESP32 e interfaz web moderna.</p>
-              
-              <div class="flex flex-wrap gap-2">
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Vite</span>
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Tailwind</span>
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Google</span>
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">FireBase</span>
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">ESP32</span>
-              </div>
-            </div>
-          </a>
-
-          <a 
-            href="https://samesparts.github.io/PagCrVenta/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="block overflow-hidden transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm hover:scale-105"
-          >
-            <img class="object-contain w-full h-48 bg-black" src="./logoCr.svg" alt="Logo SEE LUMINAIR Estate" />
-            
-            <div class="p-6">
-              <h3 class="mb-3 text-2xl font-bold text-white font-display">SEE LUMINAIR Estate</h3>
-              <p class="mb-4 text-gray-300">Portal exclusivo de bienes raíces con diseño elegante, galería de propiedades y contacto directo.</p>
-              
-              <div class="flex flex-wrap gap-2">
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Design</span>
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Web</span>
-                <span class="inline-block px-3 py-1 text-sm rounded-full bg-dorado_metalico/20 text-dorado_suave">Bienes Raíces</span>
-              </div>
-            </div>
-          </a>
-
-          <div class="flex flex-col items-center justify-center overflow-hidden transition-all duration-300 transform bg-gray-900 border border-gray-700 border-dashed rounded-lg shadow-xl bg-opacity-40 backdrop-blur-sm">
-            <div class="p-6 text-center">
-              <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 text-gray-500 border-2 border-gray-600 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-              </div>
-              <h3 class="mb-2 text-xl font-bold text-gray-400 font-display">Próximamente</h3>
-              <p class="text-sm text-gray-500">Espacio reservado para tu siguiente gran proyecto.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
-      
-      <div class="container px-6 mx-auto max-w-7xl">
-        
-        <div id="sobre-mi" class="mb-16 text-center scroll-mt-24">
-          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
-            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
-              Sobre Mí
-            </span>
-          </h2>
-          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
-            Conoce un poco más sobre el desarrollador detrás del código.
-          </p>
-        </div>
-
-        <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
-
-          <div class="text-gray-300 md:text-lg">
-            <h3 class="mb-6 text-3xl font-bold text-white font-display">Hola, soy SaMeSparts</h3>
-            
-            <p class="mb-4">
-              Soy un desarrollador apasionado por crear soluciones tecnológicas limpias, modernas y eficientes. Mi especialidad es convertir ideas en aplicaciones web interactivas y funcionales, prestando especial atención a la experiencia de usuario y al rendimiento.
-            </p>
-            <p class="mb-4">
-              Con experiencia en un stack de tecnologías modernas que incluye **Vite, Tailwind CSS, y C++**, disfruto tanto del desarrollo frontend como del backend y la integración con hardware (como en el proyecto EFI-VOLT).
-            </p>
-            <p>
-              La formación continua es clave en este sector. Como demuestran mis certificaciones, me mantengo al día con las mejores prácticas y herramientas del mercado (¡especialmente con Tailwind CSS!).
-            </p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-            <img 
-              src="./certificado1.jpg" 
-              alt="Certificado Learn Tailwind CSS" 
-              class="w-full transition-transform duration-300 border border-gray-700 rounded-lg shadow-xl hover:scale-105"
-            />
-            <img 
-              src="./certificado2.jpg" 
-              alt="Certificado Build a Product Card with Tailwind" 
-              class="w-full transition-transform duration-300 border border-gray-700 rounded-lg shadow-xl hover:scale-105"
-            />
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="flex items-center justify-center w-full min-h-screen py-32 text-white">
-      
-      <div class="container px-6 mx-auto">
-        
-        <div id="contacto" class="mb-16 text-center scroll-mt-24">
-          <h2 class="text-4xl font-extrabold md:text-5xl font-display">
-            <span class="text-transparent bg-gradient-to-r from-dorado_suave via-dorado_metalico to-dorado_oscuro bg-clip-text">
-              Hablemos
-            </span>
-          </h2>
-          <p class="max-w-2xl mx-auto mt-4 text-lg text-gray-300 md:text-xl">
-            ¿Listo para empezar tu proyecto? Envíame un mensaje.
-          </p>
-        </div>
-
-        <div class="max-w-3xl mx-auto">
-          <form 
-            action="https://formspree.io/f/mrbjzlbd"
-            method="POST"
-            class="p-8 space-y-6 transition-all duration-300 transform bg-gray-900 border border-gray-700 rounded-lg shadow-xl bg-opacity-70 backdrop-blur-sm"
-          >
-            
-            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div>
-                <label for="name" class="sr-only">Nombre</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  id="name" 
-                  placeholder="Nombre" 
-                  required 
-                  class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
-                />
-              </div>
-              <div>
-                <label for="email" class="sr-only">Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  id="email" 
-                  placeholder="Correo Electrónico" 
-                  required 
-                  class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label for="subject" class="sr-only">Asunto</label>
-              <input 
-                type="text" 
-                name="subject" 
-                id="subject" 
-                placeholder="Asunto del Mensaje" 
-                required 
-                class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
-              />
-            </div>
-
-            <div>
-              <label for="message" class="sr-only">Mensaje</label>
-              <textarea 
-                name="message" 
-                id="message" 
-                rows="6" 
-                placeholder="Mensaje..." 
-                required 
-                class="block w-full p-3 text-white bg-gray-800 border-gray-600 rounded-md shadow-sm focus:ring-dorado_metalico focus:border-dorado_metalico"
-              ></textarea>
-            </div>
-
-            <div class="text-center">
-              <button 
-                type="submit" 
-                class="px-8 py-3 text-lg font-semibold text-white transition duration-150 rounded-full font-display bg-dorado_oscuro hover:bg-orange-500"
-              >
-                Enviar Mensaje
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer class="w-full mt-32 text-gray-400">
-      
-      <div class="p-6 mx-auto bg-gray-900 border border-gray-700 rounded-lg shadow-xl max-w-7xl bg-opacity-70 backdrop-blur-sm">
-        
-        <div class="flex flex-col items-center justify-between md:flex-row">
+        <div class="grid items-start gap-16 md:grid-cols-2">
           
-          <div class="text-sm">
-            <p>&copy; 2025 AnkarDGex. Todos los derechos reservados.</p>
+          <div class="sticky top-32"> <h2 class="font-display text-5xl md:text-6xl font-extrabold text-[#111111] uppercase mb-10 leading-tight">
+              ¿QUIÉNES <span class="text-[#0898A2]">SOMOS?</span>
+            </h2>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">
+              <span class="font-bold text-[#111111]">ROCADI</span> es una empresa mexicana con más de 25 años de experiencia, dedicada a ofrecer soluciones integrales en mantenimiento, diseño y construcción.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed border-l-4 border-[#0898A2] pl-6">
+              Nos especializamos en la atención a inmuebles e instalaciones industriales, destacándonos por nuestra <span class="text-[#0898A2] font-bold">eficiencia, rapidez y compromiso</span> absoluto.
+            </p>
           </div>
 
-          <div class="flex mt-4 space-x-6 md:mt-0">
-            <a href="https://github.com/SaMeSparts" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300 hover:text-dorado_suave">
-              <span class="sr-only">GitHub</span>
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.84a9.56 9.56 0 0 1 2.518.337c1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z" clip-rule="evenodd" />
-              </svg>
-            </a>
-
-            <a href="https://www.instagram.com/ankardgex" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300 hover:text-dorado_suave">
-              <span class="sr-only">Instagram</span>
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.53c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
-              </svg>
-            </a>
-
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div class="p-8 bg-white border border-gray-100 border-l-4 border-l-[#0898A2] rounded-r-xl shadow-lg shadow-gray-100 hover:-translate-y-1 transition-transform">
+              <h4 class="font-extrabold text-[#111111] uppercase tracking-wider mb-2">Responsabilidad</h4>
+              <p class="text-xs leading-relaxed text-gray-500">Compromiso técnico y legal cumplido siempre en tiempo y forma.</p>
+            </div>
+            <div class="p-8 bg-white border border-gray-100 border-l-4 border-l-[#FBBF24] rounded-r-xl shadow-lg shadow-gray-100 hover:-translate-y-1 transition-transform">
+              <h4 class="font-extrabold text-[#111111] uppercase tracking-wider mb-2">Honradez</h4>
+              <p class="text-xs leading-relaxed text-gray-500">Transparencia total en cada presupuesto y uso de materiales originales.</p>
+            </div>
+            <div class="p-8 bg-white border border-gray-100 border-l-4 border-l-[#FBBF24] rounded-r-xl shadow-lg shadow-gray-100 hover:-translate-y-1 transition-transform">
+              <h4 class="font-extrabold text-[#111111] uppercase tracking-wider mb-2">Compromiso</h4>
+              <p class="text-xs leading-relaxed text-gray-500">Dedicación absoluta para superar las expectativas de cada cliente.</p>
+            </div>
+            <div class="p-8 bg-white border border-gray-100 border-l-4 border-l-[#0898A2] rounded-r-xl shadow-lg shadow-gray-100 hover:-translate-y-1 transition-transform">
+              <h4 class="font-extrabold text-[#111111] uppercase tracking-wider mb-2">Eficiencia</h4>
+              <p class="text-xs leading-relaxed text-gray-500">Optimización de recursos y tiempos de respuesta inmediatos.</p>
+            </div>
           </div>
 
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <a 
-      href="https://www.instagram.com/ankardgex" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      class="fixed z-[999] p-3 transition-transform duration-300 rounded-full shadow-lg bottom-6 right-6 hover:scale-110 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500"
-    >
-      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.468 2.53c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
-      </svg>
-    </a>
+  <section id="view-servicios" class="hidden py-24 bg-white scroll-mt-32">
+    <div class="px-4 mx-auto max-w-7xl">
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 uppercase font-display md:text-5xl">NUESTROS <span class="text-[#0898A2]">SERVICIOS</span></h2>
+        <div class="w-16 h-1 bg-[#FBBF24] mx-auto mt-4"></div>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
+          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Mantenimiento a Albercas</h4>
+          <p class="text-sm text-gray-600">Aspirado, cepillado, análisis de químicos y mantenimiento preventivo de bombas y filtros.</p>
+        </div>
+        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
+          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Impermeabilización</h4>
+          <p class="text-sm text-gray-600">Aplicación de sistemas prefabricados, acrílicos y cementosos para protección total.</p>
+        </div>
+        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
+          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Electricidad</h4>
+          <p class="text-sm text-gray-600">Tableros de control, balanceo de cargas, instalaciones industriales e iluminación LED.</p>
+        </div>
+        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
+          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Plomería</h4>
+          <p class="text-sm text-gray-600">Desazolve de drenajes, mantenimiento a cárcamos, fluxómetros e instalaciones sanitarias.</p>
+        </div>
+        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
+          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Acabados y Pintura</h4>
+          <p class="text-sm text-gray-600">Pintura vinílica y esmalte, tablaroca, pastas decorativas y acabados finos.</p>
+        </div>
+        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
+          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Herrería Industrial</h4>
+          <p class="text-sm text-gray-600">Fabricación de estructuras, protecciones, puertas industriales y mantenimiento de metalmecánica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script type="module" src="./src/main.js"></script>
-  </body>
+  <footer class="py-12 text-white bg-[#111111] border-t border-white/5">
+    <div class="px-4 mx-auto text-center max-w-7xl">
+      <p class="text-sm text-gray-500">© 2026 Rocadi Mantenimiento. Desarrollado por AnkarDGex</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
 </html>
