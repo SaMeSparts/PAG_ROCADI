@@ -1,79 +1,86 @@
 import './style.css'
 
-// ============================================
+// ---------------------------------------------
 // 1. REFERENCIAS AL DOM
-// ============================================
+// ---------------------------------------------
 
 // Sidebar Móvil
 const sidebar = document.getElementById('mobile-sidebar');
 const openBtn = document.getElementById('open-sidebar-btn');
 const closeBtn = document.getElementById('close-sidebar-btn');
 
-// Vistas Principales (Contenedores)
+// VISTAS (Las "Páginas")
 const viewInicio = document.getElementById('view-inicio');
 const viewServicios = document.getElementById('view-servicios');
+const viewEmpresa = document.getElementById('view-empresa');
 
-// Botones Desktop (Dropdown y Navbar)
-const dropHero = document.getElementById('drop-hero');
-const dropMantenimiento = document.getElementById('drop-mantenimiento');
-const dropNosotros = document.getElementById('drop-nosotros');
+// BOTONES DESKTOP
+const deskInicio = document.getElementById('desktop-btn-inicio');
 const deskServicios = document.getElementById('desktop-btn-servicios');
+const deskEmpresa = document.getElementById('desktop-btn-empresa'); 
+const deskHero = document.getElementById('drop-hero'); 
+const deskMantenimiento = document.getElementById('drop-mantenimiento');
+const deskNosotros = document.getElementById('drop-nosotros'); 
 const logoBtn = document.getElementById('logo-btn');
 
-// Botones Móvil
+// BOTONES MÓVIL
 const mobInicio = document.getElementById('mobile-btn-inicio');
+const mobServicios = document.getElementById('mobile-btn-servicios');
+const mobEmpresa = document.getElementById('mobile-btn-empresa'); 
 const mobMantenimiento = document.getElementById('mobile-btn-mantenimiento');
 const mobNosotros = document.getElementById('mobile-btn-nosotros');
-const mobServicios = document.getElementById('mobile-btn-servicios');
 
-// ============================================
+
+// ---------------------------------------------
 // 2. FUNCIONES DE NAVEGACIÓN
-// ============================================
+// ---------------------------------------------
 
-// Función universal para ir a una sección dentro de INICIO
-function scrollToSection(sectionId) {
-    // 1. Si estamos en Servicios, cambiamos a la vista Inicio
-    if (viewInicio.classList.contains('hidden')) {
-        viewServicios.classList.add('hidden');
-        viewInicio.classList.remove('hidden');
-    }
-
-    // 2. Cerramos el sidebar si está abierto (móvil)
-    sidebar.classList.add('translate-x-full');
-    sidebar.classList.remove('translate-x-0');
-
-    // 3. Scroll suave a la sección
-    if (sectionId === 'top') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-        // Pequeño timeout para asegurar que el DOM se actualizó si cambiamos de vista
-        setTimeout(() => {
-            const el = document.getElementById(sectionId);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 10);
-    }
-}
-
-// Función exclusiva para mostrar la vista SERVICIOS
-function showServiciosView() {
+// Función para cambiar de vista (Oculta todas, muestra una)
+function switchView(viewToShow) {
+    // 1. Ocultar todas las vistas
     viewInicio.classList.add('hidden');
-    viewServicios.classList.remove('hidden');
+    viewServicios.classList.add('hidden');
+    viewEmpresa.classList.add('hidden');
     
-    // Cierra sidebar móvil
+    // 2. Mostrar la deseada
+    viewToShow.classList.remove('hidden');
+    
+    // 3. Cerrar sidebar si está abierto
     sidebar.classList.add('translate-x-full');
     sidebar.classList.remove('translate-x-0');
     
-    // Scroll arriba
+    // 4. Scroll arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ============================================
-// 3. EVENT LISTENERS
-// ============================================
+// Función para navegar dentro de INICIO (Scroll a sección)
+function scrollToSection(sectionId) {
+    // Si no estamos en inicio, cambiamos a inicio primero
+    if (viewInicio.classList.contains('hidden')) {
+        switchView(viewInicio);
+        // Pequeño timeout para que el DOM renderice la vista antes de hacer scroll
+        setTimeout(() => {
+            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+    } else {
+        // Si ya estamos en inicio, solo hacemos scroll
+        if (sectionId === 'top') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Cerrar sidebar por si acaso
+        sidebar.classList.add('translate-x-full');
+        sidebar.classList.remove('translate-x-0');
+    }
+}
 
-// -- Sidebar Toggle --
+
+// ---------------------------------------------
+// 3. EVENT LISTENERS
+// ---------------------------------------------
+
+// Sidebar Toggle
 openBtn.addEventListener('click', () => {
     sidebar.classList.remove('translate-x-full');
     sidebar.classList.add('translate-x-0');
@@ -83,17 +90,28 @@ closeBtn.addEventListener('click', () => {
     sidebar.classList.remove('translate-x-0');
 });
 
-// -- Dropdown Desktop (Navegación Interna) --
-dropHero.addEventListener('click', () => scrollToSection('top'));
-dropMantenimiento.addEventListener('click', () => scrollToSection('mantenimiento-section'));
-dropNosotros.addEventListener('click', () => scrollToSection('nosotros-section'));
+// --- NAVEGACIÓN VISTAS PRINCIPALES ---
 
-// -- Navbar Desktop (Servicios y Logo) --
-deskServicios.addEventListener('click', showServiciosView);
-logoBtn.addEventListener('click', () => scrollToSection('top'));
+// Inicio
+deskInicio.addEventListener('click', () => switchView(viewInicio));
+mobInicio.addEventListener('click', () => switchView(viewInicio));
+logoBtn.addEventListener('click', () => switchView(viewInicio));
 
-// -- Menú Móvil --
-mobInicio.addEventListener('click', () => scrollToSection('top'));
-mobMantenimiento.addEventListener('click', () => scrollToSection('mantenimiento-section'));
+// Empresa
+deskEmpresa.addEventListener('click', () => switchView(viewEmpresa));
+mobEmpresa.addEventListener('click', () => switchView(viewEmpresa));
+
+// Servicios
+deskServicios.addEventListener('click', () => switchView(viewServicios));
+mobServicios.addEventListener('click', () => switchView(viewServicios));
+
+
+// --- NAVEGACIÓN INTERNA (Submenús Inicio) ---
+deskHero.addEventListener('click', () => scrollToSection('top'));
+deskMantenimiento.addEventListener('click', () => scrollToSection('mantenimiento-section'));
+
+// "Nosotros" en el dropdown: lleva a la sección Nosotros del INICIO
+deskNosotros.addEventListener('click', () => scrollToSection('nosotros-section'));
 mobNosotros.addEventListener('click', () => scrollToSection('nosotros-section'));
-mobServicios.addEventListener('click', showServiciosView);
+
+mobMantenimiento.addEventListener('click', () => scrollToSection('mantenimiento-section'));
