@@ -34,6 +34,20 @@
             </div>
           </div>
           <button id="desktop-btn-empresa" class="text-sm font-medium transition hover:text-[#0898A2]">Empresa</button>
+          <div class="relative flex items-center h-full group">
+            <button id="desktop-btn-plan" class="text-sm font-medium transition hover:text-[#0898A2] flex items-center gap-1 focus:outline-none">
+              Plan de Mantenimiento
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 top-16 w-56 bg-white text-gray-800 shadow-xl rounded-b-lg overflow-hidden hidden group-hover:block border-t-4 border-[#FBBF24]">
+              <button id="drop-bitacora" class="block w-full text-left px-4 py-3 text-sm hover:bg-gray-50 hover:text-[#0898A2] transition border-b border-gray-100">
+                Manejo de Bitácora
+              </button>
+              <button id="drop-reporte" class="block w-full text-left px-4 py-3 text-sm hover:bg-gray-50 hover:text-[#0898A2] transition">
+                Reporte de Equipo
+              </button>
+            </div>
+          </div>
           <button id="desktop-btn-servicios" class="text-sm font-medium transition hover:text-[#0898A2]">Servicios</button>
           <a href="tel:5513332333" class="px-5 py-2 text-sm font-bold text-white transition rounded bg-[#0898A2] hover:opacity-90 shadow-lg shadow-[#0898A2]/20">
             (55) 1333-2333
@@ -64,6 +78,13 @@
         </div>
         <div class="w-full h-px my-2 bg-white/10"></div>
         <button id="mobile-btn-empresa" class="hover:text-[#0898A2]">Empresa</button>
+        <div>
+            <button id="mobile-btn-plan" class="block w-full text-left hover:text-[#0898A2] mb-2 font-bold">Plan de Mantenimiento</button>
+            <div class="flex flex-col gap-2 pl-4 text-base text-gray-400 border-l border-gray-700">
+                <button id="mobile-btn-bitacora" class="text-left transition hover:text-white">Manejo de Bitácora</button>
+                <button id="mobile-btn-reporte" class="text-left transition hover:text-white">Reporte de Equipo</button>
+            </div>
+        </div>
         <button id="mobile-btn-servicios" class="hover:text-[#0898A2]">Servicios</button>
         <div class="pt-8 mt-4 text-center border-t border-white/10">
           <p class="mb-4 text-sm text-gray-400">Atención inmediata:</p>
@@ -208,7 +229,7 @@
     </section>
   </main>
 
-  <section id="view-empresa" class="hidden min-h-screen pt-32 pb-24 bg-white scroll-mt-0">
+  <section id="view-empresa" class="hidden min-h-screen pt-10 pb-24 bg-white scroll-mt-0">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       
       <div class="mb-32">
@@ -350,40 +371,208 @@
     </div>
   </section>
 
-  <section id="view-servicios" class="hidden py-24 bg-white scroll-mt-32">
-    <div class="px-4 mx-auto max-w-7xl">
+  <section id="view-plan" class="hidden min-h-screen pt-32 pb-24 bg-white scroll-mt-0">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 uppercase font-display md:text-5xl">PLAN DE <span class="text-[#0898A2]">MANTENIMIENTO</span></h2>
+        <div class="w-24 h-1 bg-[#FBBF24] mx-auto mt-4 rounded-full"></div>
+        <p class="mt-4 text-gray-500">Gestión integral y transparente para su tranquilidad.</p>
+      </div>
+
+      <div id="section-bitacora" class="mb-32 scroll-mt-32">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div class="relative">
+             <div class="absolute inset-0 bg-[#0898A2] rounded-2xl transform -translate-x-3 translate-y-3"></div>
+             <div class="relative flex items-center justify-center p-10 bg-white border border-gray-100 shadow-lg rounded-2xl h-80">
+                <svg class="w-32 h-32 text-[#0898A2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+             </div>
+          </div>
+          <div>
+            <h3 class="mb-4 text-3xl font-extrabold text-gray-900 font-display">Manejo de Bitácora</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">
+              Implementamos un sistema riguroso de seguimiento diario. Nuestro personal registra cada actividad, incidencia y mantenimiento realizado en sitio, garantizando un control total sobre las operaciones.
+            </p>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#FBBF24] mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>Registro de entrada y salida del personal.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#FBBF24] mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>Monitoreo de rutinas diarias de limpieza y revisión.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#FBBF24] mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>Historial accesible para auditorías.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="section-reporte" class="mb-10 scroll-mt-32">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div class="order-2 lg:order-1">
+            <h3 class="mb-4 text-3xl font-extrabold text-gray-900 font-display">Reporte de Equipo y Actividades</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-600">
+              Entregamos informes periódicos detallados sobre el estado de sus instalaciones. Documentamos con evidencia fotográfica el "antes y después" de cada intervención mayor y el estado actual de los equipos críticos.
+            </p>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#0898A2] mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Evidencia fotográfica de trabajos realizados.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#0898A2] mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Detección temprana de fallas en equipos.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#0898A2] mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>Sugerencias proactivas de mantenimiento correctivo.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="relative order-1 lg:order-2">
+             <div class="absolute inset-0 bg-[#FBBF24] rounded-2xl transform translate-x-3 translate-y-3"></div>
+             <div class="relative flex items-center justify-center p-10 bg-white border border-gray-100 shadow-lg rounded-2xl h-80">
+                <svg class="w-32 h-32 text-[#FBBF24]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+             </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <section id="view-servicios" class="hidden min-h-screen pt-10 pb-24 bg-white scroll-mt-32">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      
       <div class="mb-16 text-center">
         <h2 class="text-3xl font-bold text-gray-900 uppercase font-display md:text-5xl">NUESTROS <span class="text-[#0898A2]">SERVICIOS</span></h2>
-        <div class="w-16 h-1 bg-[#FBBF24] mx-auto mt-4"></div>
+        <div class="w-24 h-1 bg-[#FBBF24] mx-auto mt-4 rounded-full"></div>
+        <p class="mt-4 text-gray-500">Seleccione un servicio para ver más detalles.</p>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
-          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Mantenimiento a Albercas</h4>
-          <p class="text-sm text-gray-600">Aspirado, cepillado, análisis de químicos y mantenimiento preventivo de bombas y filtros.</p>
-        </div>
-        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
-          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Impermeabilización</h4>
-          <p class="text-sm text-gray-600">Aplicación de sistemas prefabricados, acrílicos y cementosos para protección total.</p>
-        </div>
-        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
-          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Electricidad</h4>
-          <p class="text-sm text-gray-600">Tableros de control, balanceo de cargas, instalaciones industriales e iluminación LED.</p>
-        </div>
-        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
-          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Plomería</h4>
-          <p class="text-sm text-gray-600">Desazolve de drenajes, mantenimiento a cárcamos, fluxómetros e instalaciones sanitarias.</p>
-        </div>
-        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
-          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Acabados y Pintura</h4>
-          <p class="text-sm text-gray-600">Pintura vinílica y esmalte, tablaroca, pastas decorativas y acabados finos.</p>
-        </div>
-        <div class="p-8 transition border border-gray-100 bg-gray-50 rounded-xl hover:shadow-md">
-          <h4 class="font-bold text-xl text-[#0898A2] mb-3 uppercase">Herrería Industrial</h4>
-          <p class="text-sm text-gray-600">Fabricación de estructuras, protecciones, puertas industriales y mantenimiento de metalmecánica.</p>
-        </div>
+
+      <div class="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        
+        <button onclick="openModal('albercas')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#0898A2] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#0898A2]/10 text-[#0898A2] group-hover:bg-[#0898A2] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#0898A2]">Mantenimiento a Albercas</h4>
+        </button>
+
+        <button onclick="openModal('bombeo')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#FBBF24] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#FBBF24]/10 text-[#FBBF24] group-hover:bg-[#FBBF24] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#FBBF24]">Equipos de Bombeo</h4>
+        </button>
+
+        <button onclick="openModal('emergencia')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#0898A2] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#0898A2]/10 text-[#0898A2] group-hover:bg-[#0898A2] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#0898A2]">Plantas de Emergencia</h4>
+        </button>
+
+        <button onclick="openModal('tratamiento')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#FBBF24] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#FBBF24]/10 text-[#FBBF24] group-hover:bg-[#FBBF24] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#FBBF24]">Plantas de Tratamiento</h4>
+        </button>
+
+        <button onclick="openModal('pintura')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#0898A2] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#0898A2]/10 text-[#0898A2] group-hover:bg-[#0898A2] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#0898A2]">Pintura</h4>
+        </button>
+
+        <button onclick="openModal('impermeabilizacion')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#FBBF24] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#FBBF24]/10 text-[#FBBF24] group-hover:bg-[#FBBF24] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#FBBF24]">Impermeabilización</h4>
+        </button>
+
+        <button onclick="openModal('electricas')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#0898A2] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#0898A2]/10 text-[#0898A2] group-hover:bg-[#0898A2] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#0898A2]">Instalaciones Eléctricas</h4>
+        </button>
+
+        <button onclick="openModal('hidraulicas')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#FBBF24] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#FBBF24]/10 text-[#FBBF24] group-hover:bg-[#FBBF24] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#FBBF24]">Instalaciones Hidráulicas</h4>
+        </button>
+
+        <button onclick="openModal('sanitarias')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#0898A2] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#0898A2]/10 text-[#0898A2] group-hover:bg-[#0898A2] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#0898A2]">Instalaciones Sanitarias</h4>
+        </button>
+
+        <button onclick="openModal('albanileria')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#FBBF24] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#FBBF24]/10 text-[#FBBF24] group-hover:bg-[#FBBF24] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#FBBF24]">Albañilería y Acabados</h4>
+        </button>
+
+        <button onclick="openModal('herreria')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#0898A2] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#0898A2]/10 text-[#0898A2] group-hover:bg-[#0898A2] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#0898A2]">Estructuras Metálicas</h4>
+        </button>
+
+        <button onclick="openModal('remodelaciones')" class="group p-6 text-left transition-all bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#FBBF24] hover:-translate-y-1">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[#FBBF24]/10 text-[#FBBF24] group-hover:bg-[#FBBF24] group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          </div>
+          <h4 class="font-bold text-gray-900 uppercase group-hover:text-[#FBBF24]">Remodelaciones</h4>
+        </button>
+
       </div>
     </div>
   </section>
+
+  <div id="service-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    
+    <div class="relative flex items-center justify-center min-h-screen p-4">
+      <div class="w-full max-w-4xl overflow-hidden transition-all transform bg-white shadow-2xl rounded-3xl animate-bounce-slow">
+        
+        <button onclick="closeModal()" class="absolute z-10 p-2 transition rounded-full top-4 right-4 bg-white/80 hover:bg-gray-100">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <div class="grid md:grid-cols-2">
+          <div class="h-64 bg-gray-100 md:h-auto">
+            <img id="modal-img" src="" alt="Servicio" class="object-cover w-full h-full">
+          </div>
+          
+          <div class="flex flex-col justify-center p-8 md:p-12">
+            <h3 id="modal-title" class="mb-4 text-3xl font-extrabold text-gray-900 uppercase font-display"></h3>
+            <div class="w-16 h-1 bg-[#0898A2] mb-6 rounded-full"></div>
+            <p id="modal-desc" class="mb-8 text-lg leading-relaxed text-gray-600"></p>
+            
+            <a href="https://wa.me/525513332333" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-[#0898A2] text-white font-bold rounded-lg hover:bg-[#067a82] transition w-max">
+              Cotizar este servicio
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="bg-[#111111] text-white border-t border-white/10 pt-16 pb-8">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

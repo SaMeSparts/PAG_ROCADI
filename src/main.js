@@ -1,117 +1,197 @@
 import './style.css'
 
-// ---------------------------------------------
-// 1. REFERENCIAS AL DOM
-// ---------------------------------------------
+// ============================================
+// 1. DATOS DE LOS SERVICIOS (Igual que antes)
+// ============================================
+const servicesData = {
+    albercas: {
+        title: "Mantenimiento a Albercas",
+        desc: "Servicio integral de limpieza, aspirado, cepillado, análisis y balance de químicos, así como mantenimiento preventivo a bombas y filtros.",
+        img: "./servicio1.jpeg" 
+    },
+    bombeo: {
+        title: "Equipos de Bombeo",
+        desc: "Mantenimiento correctivo y preventivo a bombas de agua potable, hidroneumáticos y sistemas de presión constante.",
+        img: "./servicio2.jpg" 
+    },
+    emergencia: {
+        title: "Plantas de Emergencia",
+        desc: "Asegura la continuidad de tu energía. Realizamos pruebas de transferencia, revisión de niveles, cambio de filtros y aceite.",
+        img: "./servicio3.jpg" 
+    },
+    tratamiento: {
+        title: "Plantas de Tratamiento",
+        desc: "Operación y mantenimiento de PTAR. Retiro de lodos, monitoreo de cloración, revisión de sopladores y bombas.",
+        img: "./servicio4.jpg" 
+    },
+    pintura: {
+        title: "Pintura Profesional",
+        desc: "Aplicación de pintura vinílica y esmalte en interiores, exteriores y estructuras. Acabados de alta calidad.",
+        img: "./servicio5.jpg" 
+    },
+    impermeabilizacion: {
+        title: "Impermeabilización",
+        desc: "Protección total contra la humedad. Aplicación de sistemas prefabricados, acrílicos y cementosos.",
+        img: "./servicio6.jpg" 
+    },
+    electricas: {
+        title: "Instalaciones Eléctricas",
+        desc: "Mantenimiento a tableros de distribución, balanceo de cargas, iluminación LED industrial y revisión de tierras físicas.",
+        img: "./servicio7.jpg" 
+    },
+    hidraulicas: {
+        title: "Instalaciones Hidráulicas",
+        desc: "Detección y reparación de fugas, sustitución de tuberías (cobre, CPVC, tubo plus), mantenimiento a válvulas.",
+        img: "./servicio8.jpg" 
+    },
+    sanitarias: {
+        title: "Instalaciones Sanitarias",
+        desc: "Desazolve de drenajes, mantenimiento a cárcamos de aguas negras, reparación de registros sanitarios.",
+        img: "./servicio9.jpg" 
+    },
+    albanileria: {
+        title: "Albañilería y Acabados",
+        desc: "Reparaciones generales, colocación de pisos, azulejos, mampostería, firmes de concreto y tablaroca.",
+        img: "./servicio10.jpg" 
+    },
+    herreria: {
+        title: "Estructuras Metálicas",
+        desc: "Fabricación y reparación de puertas industriales, techumbres, barandales, escaleras marinas y protecciones.",
+        img: "./servicio11.jpg" 
+    },
+    remodelaciones: {
+        title: "Remodelaciones",
+        desc: "Proyectos integrales de remodelación para oficinas, fachadas y áreas comunes. Transformamos espacios.",
+        img: "./servicio12.jpg" 
+    }
+};
 
-// Sidebar Móvil
+// ============================================
+// 2. REFERENCIAS AL DOM
+// ============================================
 const sidebar = document.getElementById('mobile-sidebar');
 const openBtn = document.getElementById('open-sidebar-btn');
 const closeBtn = document.getElementById('close-sidebar-btn');
 
-// VISTAS (Las "Páginas")
 const viewInicio = document.getElementById('view-inicio');
 const viewServicios = document.getElementById('view-servicios');
 const viewEmpresa = document.getElementById('view-empresa');
+const viewPlan = document.getElementById('view-plan'); // NUEVA REFERENCIA
 
-// BOTONES DESKTOP
-const deskInicio = document.getElementById('desktop-btn-inicio');
-const deskServicios = document.getElementById('desktop-btn-servicios');
-const deskEmpresa = document.getElementById('desktop-btn-empresa'); 
-const deskHero = document.getElementById('drop-hero'); 
-const deskMantenimiento = document.getElementById('drop-mantenimiento');
-const deskNosotros = document.getElementById('drop-nosotros'); 
-const logoBtn = document.getElementById('logo-btn');
+const modal = document.getElementById('service-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalImg = document.getElementById('modal-img');
 
-// BOTONES MÓVIL
-const mobInicio = document.getElementById('mobile-btn-inicio');
-const mobServicios = document.getElementById('mobile-btn-servicios');
-const mobEmpresa = document.getElementById('mobile-btn-empresa'); 
-const mobMantenimiento = document.getElementById('mobile-btn-mantenimiento');
-const mobNosotros = document.getElementById('mobile-btn-nosotros');
+// ============================================
+// 3. FUNCIONES GLOBALES
+// ============================================
+window.openModal = function(serviceKey) {
+    const data = servicesData[serviceKey];
+    if(data) {
+        modalTitle.textContent = data.title;
+        modalDesc.textContent = data.desc;
+        modalImg.src = data.img;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+    }
+};
 
+window.closeModal = function() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = ''; 
+};
 
-// ---------------------------------------------
-// 2. FUNCIONES DE NAVEGACIÓN
-// ---------------------------------------------
+// ============================================
+// 4. LÓGICA DE NAVEGACIÓN
+// ============================================
 
-// Función para cambiar de vista (Oculta todas, muestra una)
 function switchView(viewToShow) {
-    // 1. Ocultar todas las vistas
     viewInicio.classList.add('hidden');
     viewServicios.classList.add('hidden');
     viewEmpresa.classList.add('hidden');
+    viewPlan.classList.add('hidden'); // Ocultar lo nuevo
     
-    // 2. Mostrar la deseada
     viewToShow.classList.remove('hidden');
-    
-    // 3. Cerrar sidebar si está abierto
     sidebar.classList.add('translate-x-full');
     sidebar.classList.remove('translate-x-0');
-    
-    // 4. Scroll arriba
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Función para navegar dentro de INICIO (Scroll a sección)
 function scrollToSection(sectionId) {
-    // Si no estamos en inicio, cambiamos a inicio primero
-    if (viewInicio.classList.contains('hidden')) {
-        switchView(viewInicio);
-        // Pequeño timeout para que el DOM renderice la vista antes de hacer scroll
-        setTimeout(() => {
-            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
-    } else {
-        // Si ya estamos en inicio, solo hacemos scroll
-        if (sectionId === 'top') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Lógica para Plan de Mantenimiento
+    if (sectionId === 'section-bitacora' || sectionId === 'section-reporte') {
+        if (viewPlan.classList.contains('hidden')) {
+            switchView(viewPlan);
+            setTimeout(() => {
+                document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
         } else {
             document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
         }
-        // Cerrar sidebar por si acaso
-        sidebar.classList.add('translate-x-full');
-        sidebar.classList.remove('translate-x-0');
+    } 
+    // Lógica para Inicio
+    else {
+        if (viewInicio.classList.contains('hidden')) {
+            switchView(viewInicio);
+            setTimeout(() => {
+                if (sectionId === 'top') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 50);
+        } else {
+            if (sectionId === 'top') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     }
+    sidebar.classList.add('translate-x-full');
+    sidebar.classList.remove('translate-x-0');
 }
 
+// ============================================
+// 5. EVENT LISTENERS
+// ============================================
 
-// ---------------------------------------------
-// 3. EVENT LISTENERS
-// ---------------------------------------------
-
-// Sidebar Toggle
-openBtn.addEventListener('click', () => {
+// Sidebar Toggles
+document.getElementById('open-sidebar-btn').addEventListener('click', () => {
     sidebar.classList.remove('translate-x-full');
     sidebar.classList.add('translate-x-0');
 });
-closeBtn.addEventListener('click', () => {
+document.getElementById('close-sidebar-btn').addEventListener('click', () => {
     sidebar.classList.add('translate-x-full');
     sidebar.classList.remove('translate-x-0');
 });
 
-// --- NAVEGACIÓN VISTAS PRINCIPALES ---
+// Navegación Desktop
+document.getElementById('desktop-btn-inicio').addEventListener('click', () => switchView(viewInicio));
+document.getElementById('desktop-btn-empresa').addEventListener('click', () => switchView(viewEmpresa));
+document.getElementById('desktop-btn-servicios').addEventListener('click', () => switchView(viewServicios));
+document.getElementById('desktop-btn-plan').addEventListener('click', () => switchView(viewPlan)); // NUEVO
+document.getElementById('logo-btn').addEventListener('click', () => switchView(viewInicio));
 
-// Inicio
-deskInicio.addEventListener('click', () => switchView(viewInicio));
-mobInicio.addEventListener('click', () => switchView(viewInicio));
-logoBtn.addEventListener('click', () => switchView(viewInicio));
+// Navegación Mobile
+document.getElementById('mobile-btn-inicio').addEventListener('click', () => switchView(viewInicio));
+document.getElementById('mobile-btn-empresa').addEventListener('click', () => switchView(viewEmpresa));
+document.getElementById('mobile-btn-servicios').addEventListener('click', () => switchView(viewServicios));
+document.getElementById('mobile-btn-plan').addEventListener('click', () => switchView(viewPlan)); // NUEVO
 
-// Empresa
-deskEmpresa.addEventListener('click', () => switchView(viewEmpresa));
-mobEmpresa.addEventListener('click', () => switchView(viewEmpresa));
+// Enlaces Internos (Dropdowns)
+document.getElementById('drop-hero').addEventListener('click', () => scrollToSection('top'));
+document.getElementById('drop-mantenimiento').addEventListener('click', () => scrollToSection('mantenimiento-section'));
+document.getElementById('drop-nosotros').addEventListener('click', () => scrollToSection('nosotros-section'));
 
-// Servicios
-deskServicios.addEventListener('click', () => switchView(viewServicios));
-mobServicios.addEventListener('click', () => switchView(viewServicios));
+// NUEVOS DROPDOWNS PLAN
+document.getElementById('drop-bitacora').addEventListener('click', () => scrollToSection('section-bitacora'));
+document.getElementById('drop-reporte').addEventListener('click', () => scrollToSection('section-reporte'));
 
+document.getElementById('mobile-btn-mantenimiento').addEventListener('click', () => scrollToSection('mantenimiento-section'));
+document.getElementById('mobile-btn-nosotros').addEventListener('click', () => scrollToSection('nosotros-section'));
 
-// --- NAVEGACIÓN INTERNA (Submenús Inicio) ---
-deskHero.addEventListener('click', () => scrollToSection('top'));
-deskMantenimiento.addEventListener('click', () => scrollToSection('mantenimiento-section'));
-
-// "Nosotros" en el dropdown: lleva a la sección Nosotros del INICIO
-deskNosotros.addEventListener('click', () => scrollToSection('nosotros-section'));
-mobNosotros.addEventListener('click', () => scrollToSection('nosotros-section'));
-
-mobMantenimiento.addEventListener('click', () => scrollToSection('mantenimiento-section'));
+// NUEVOS SUBMENÚS MÓVIL
+document.getElementById('mobile-btn-bitacora').addEventListener('click', () => scrollToSection('section-bitacora'));
+document.getElementById('mobile-btn-reporte').addEventListener('click', () => scrollToSection('section-reporte'));
