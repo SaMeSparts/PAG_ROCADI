@@ -1,7 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
 
+/* Comportamiento de Scroll Suave para toda la página */
 html {
   scroll-behavior: smooth;
+}
+
+/* Estilos de la barra de desplazamiento (Scrollbar) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0898A2; /* Tu color turquesa */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #067a82;
+}
+
+/* Animación para el modal (efecto rebote suave) */
+@keyframes bounce-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+/* Ajustes para móviles */
+body.overflow-hidden {
+  overflow: hidden; /* Evita que el fondo se mueva cuando abres el menú */
 }
 
 @tailwind base;
