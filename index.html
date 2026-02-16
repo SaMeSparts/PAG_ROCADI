@@ -944,16 +944,19 @@
   </section>
 
   <div id="service-modal" class="fixed inset-0 z-[100] hidden">
+    
     <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
     
     <div class="relative flex items-center justify-center min-h-screen p-4">
-      <div class="w-full max-w-4xl overflow-hidden transition-all transform bg-white shadow-2xl rounded-3xl animate-bounce-slow">
+      
+      <div class="w-full max-w-4xl overflow-hidden transition-all transform bg-white shadow-2xl rounded-3xl modal-animate">
         
         <button onclick="closeModal()" class="absolute z-10 p-2 transition rounded-full top-4 right-4 bg-white/80 hover:bg-gray-100">
           <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
         <div class="grid md:grid-cols-2">
+          
           <div class="h-64 bg-gray-100 md:h-auto">
             <img id="modal-img" src="" alt="Servicio" class="object-cover w-full h-full">
           </div>
@@ -968,11 +971,11 @@
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-
 
 
   <footer class="bg-[#111111] text-white pt-16 pb-8 border-t border-white/10">
